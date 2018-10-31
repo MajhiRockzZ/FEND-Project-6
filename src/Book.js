@@ -2,8 +2,17 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 class Book extends Component {
+
+    changeShelf = (event) => {
+        this.props.onShelfChange({id: this.props.id}, event.target.value);
+    };
+
+    handleChecked = (event) => {
+        this.props.onBookChecked(this.props.id, event.target.checked);
+    };
+
     render() {
-        const {id, title, thumbnail, shelf, authors, rating} = this.props;
+        const {id, title, thumbnail, shelf, authors} = this.props;
 
         return (
             <div className='book'>
@@ -25,5 +34,12 @@ class Book extends Component {
     }
 }
 
+Book.propTypes = {
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    thumbnail: PropTypes.string,
+    authors: PropTypes.array.isRequired,
+    onShelfChange: PropTypes.func.isRequired,
+}
 
 export default Book;
