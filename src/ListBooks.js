@@ -14,6 +14,20 @@ class ListBooks extends Component {
         const checkedBookWithInfo = this.props.books.find(book => book.id === bookId);
         this.props.onBookChecked(checkedBookWithInfo, checkedStatus);
     }
+
+    render() {
+        const bookShelves = this.props.books.reduce((prev, current) => {
+            if (!prev[current.shelf]) {
+                prev[current.shelf] = [];
+            }
+            prev[current.shelf].push(current);
+            return prev;
+        }, {
+            currentlyReading: [],
+            wantToRead: [],
+            read: []
+        });
+    }
 }
 
 ListBooks.propTypes = {
