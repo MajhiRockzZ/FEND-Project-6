@@ -48,6 +48,16 @@ class ListBooks extends Component {
                             books={bookShelves.wantToRead}
                             onShelfChange={this.props.onShelfChange}
                         />
+                        <BookShelf
+                            title='Read'
+                            books={bookShelves.read}
+                            onShelfChange={this.props.onShelfChange}
+                        />
+                    </div>
+                </div>
+                <div className='open-search'>
+                    <Link to='/search'>Add a book</Link>
+                </div>
             </div>
         )
     }
