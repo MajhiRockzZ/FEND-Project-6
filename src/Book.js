@@ -29,6 +29,9 @@ class Book extends Component {
                 {authors && authors.map(author => (
                     <div key={author} className='book-authors'>{author}</div>
                 ))}
+                <div>
+                    <input type='checkbox' name='chk-book' value={id} onChange={this.handleChecked}/>
+                </div>
             </div>
         )
     }
@@ -40,6 +43,7 @@ Book.propTypes = {
     thumbnail: PropTypes.string,
     authors: PropTypes.array.isRequired,
     onShelfChange: PropTypes.func.isRequired,
-}
+    onBookChecked: PropTypes.func
+};
 
 export default Book;
