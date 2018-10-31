@@ -38,12 +38,16 @@ class ListBooks extends Component {
                 </div>
                 <div className='list-books-content'>
                     <div>
-                        <BookShelf title='Currently Reading'
-                                   books={bookShelves.currentlyReading}
-                                   onShelfChange={this.props.onShelfChange}
+                        <BookShelf
+                            title='Currently Reading'
+                            books={bookShelves.currentlyReading}
+                            onShelfChange={this.props.onShelfChange}
                         />
-                    </div>
-                </div>
+                        <BookShelf
+                            title='Want to Read'
+                            books={bookShelves.wantToRead}
+                            onShelfChange={this.props.onShelfChange}
+                        />
             </div>
         )
     }
