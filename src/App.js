@@ -40,6 +40,25 @@ class BooksApp extends React.Component {
             })
         })
     }
+
+    render() {
+        return (
+            <div className='app'>
+                <Route exact path='/' render={() =>
+                <ListBooks
+                    books={this.state.books}
+                    onShelfChange={this.updateShelf}
+                />
+                }/>
+                <Route path='/search' render={() =>
+                    <SearchBooks
+                        currentBooks={this.state.books}
+                        onShelfChange={this.updateShelf}
+                    />
+                }/>
+            </div>
+        )
+    }
 }
 
 export default BooksApp
