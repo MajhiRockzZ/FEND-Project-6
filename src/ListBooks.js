@@ -13,7 +13,7 @@ class ListBooks extends Component {
     checkBook = (bookId, checkedStatus) => {
         const checkedBookWithInfo = this.props.books.find(book => book.id === bookId);
         this.props.onBookChecked(checkedBookWithInfo, checkedStatus);
-    }
+    };
 
     render() {
         const bookShelves = this.props.books.reduce((prev, current) => {
@@ -27,6 +27,25 @@ class ListBooks extends Component {
             wantToRead: [],
             read: []
         });
+
+        return (
+            <div className='list-books'>
+                <div className='list-books-title'>
+                    <h1>MyReads</h1>
+                    <div className='bulk-shelf-changer'>
+                        <ShelfSelect onChange={this.bulkShelfChange}/>
+                    </div>
+                </div>
+                <div className='list-books-content'>
+                    <div>
+                        <BookShelf title='Currently Reading'
+                                   books={bookShelves.currentlyReading}
+                                   onShelfChange={this.props.onShelfChange}
+                        />
+                    </div>
+                </div>
+            </div>
+        )
     }
 }
 
