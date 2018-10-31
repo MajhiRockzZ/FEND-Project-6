@@ -8,6 +8,11 @@ class ListBooks extends Component {
     bulkShelfChange = (event) => {
         const targetShelf = event.target.value;
         this.props.onBulkShelfChange(targetShelf);
+    };
+
+    checkBook = (bookId, checkedStatus) => {
+        const checkedBookWithInfo = this.props.books.find(book => book.id === bookId);
+        this.props.onBookChecked(checkedBookWithInfo, checkedStatus);
     }
 }
 
