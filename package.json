@@ -1,4 +1,10 @@
 {
+  "name": "fend-project-6",
+  "version": "1.0.0",
+  "description": "MyReads: A Book Lending App",
+  "main": "index.js",
+  "author": "Sumesh Majhi",
+  "license": "MIT",
   "dependencies": {
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
