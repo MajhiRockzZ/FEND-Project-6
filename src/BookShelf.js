@@ -16,7 +16,7 @@ const BookShelf = (props) => {
                 onBookChecked={props.onBookChecked}
             />
         </li>
-    ))
+    ));
 
     return (
         <div className='bookshelf'>
@@ -28,6 +28,12 @@ const BookShelf = (props) => {
             </div>
         </div>
     )
+};
+
+BookShelf.propTypes = {
+    title: PropTypes.string.isRequired,
+    books: PropTypes.array.isRequired,
+    onShelfChange: PropTypes.func.isRequired
 };
 
 export default BookShelf;
