@@ -172,3 +172,20 @@ body, .app {
   text-align: center;
   font-size: 0.8em;
 }
+
+/* ----------------------------- */
+/* MULTIPLE SHELF SELECT */
+/* ----------------------------- */
+.bulk-shelf-changer {
+  float: right;
+  position: relative;
+  right: 10px;
+}
+
+.list-books .bulk-shelf-changer {
+  bottom: 15px;
+}
+
+.search-books .bulk-shelf-changer {
+  bottom: 18px;
+}
