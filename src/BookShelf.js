@@ -3,7 +3,7 @@ import Book from './Book';
 import PropTypes from 'prop-types';
 
 const BookShelf = (props) => {
-  const booksToDisplay = props.book.map((book) => (
+  const booksToDisplay = props.books.map((book) => (
     <li key={book.id}>
       <Book
         id={book.id}

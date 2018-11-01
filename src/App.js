@@ -21,7 +21,7 @@ class BooksApp extends React.Component {
    * Update shelf for a book
    */
   updateShelf = (updatedBook, shelf) => {
-    BooksApp.update(updatedBook, shelf).then(response => {
+    BooksAPI.update(updatedBook, shelf).then(response => {
       this.setState(state => {
         let currentBooks = [];
         const bookFoundInLibrary = state.books.find(book =>
