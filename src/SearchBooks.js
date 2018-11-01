@@ -28,3 +28,10 @@ class SearchBooks extends Component {
         this.props.onBookChecked(checkedBookWithInfo, checkedStatus)
     }
 }
+
+SearchBooks.propTypes = {
+    currentBooks: PropTypes.array.isRequired,
+    onShelfChange: PropTypes.func.isRequired,
+};
+
+export default SearchBooks;
