@@ -27,6 +27,24 @@ class SearchBooks extends Component {
         const checkedBookWithInfo = this.state.searchResult.find(book => book.id === bookId)
         this.props.onBookChecked(checkedBookWithInfo, checkedStatus)
     }
+
+    search = (query) => {
+        BookAPI.search(query, 10).then(response => {
+            if (!response.error) {
+                this.setState({
+                    searchResult: response.map(book => {
+                        const bookFoundInLibrary = this.props.currentBooks.find(
+                            currentBook => currentBook.id === book.id)
+
+                        if (bookFoundInLibrary) {
+                            book.shelf = bookFoundInLibrary.shelf;
+                        }
+                        return book;
+                    })
+                })
+            }
+        })
+    }
 }
 
 SearchBooks.propTypes = {
