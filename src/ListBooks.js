@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import BookShelf from './BookShelf';
-import ShelfSelect from '/ShelfSelect';
+import ShelfSelect from './ShelfSelect';
 import PropTypes from 'prop-types';
 
 class ListBooks extends Component {
@@ -47,11 +47,13 @@ class ListBooks extends Component {
                             title='Want to Read'
                             books={bookShelves.wantToRead}
                             onShelfChange={this.props.onShelfChange}
+                            onBookChecked={this.checkBook}
                         />
                         <BookShelf
                             title='Read'
                             books={bookShelves.read}
                             onShelfChange={this.props.onShelfChange}
+                            onBookChecked={this.checkBook}
                         />
                     </div>
                 </div>

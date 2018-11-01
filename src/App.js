@@ -41,7 +41,7 @@ class BooksApp extends React.Component {
                 return {book: currentBooks};
             })
         })
-    }
+    };
 
     /**
      * Bulk update shelf
@@ -68,7 +68,7 @@ class BooksApp extends React.Component {
                         });
                     const currentBookWithUpdatedShelf = state.books.map(book => {
                         const bookExistInCheckedBooks = state.checkedBooks.find(
-                            checkedBook => checkedBook.id === book.id)
+                            checkedBook => checkedBook.id === book.id);
 
                         if (bookExistInCheckedBooks) {
                             book.shelf = shelf;
