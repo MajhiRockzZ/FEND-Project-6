@@ -84,6 +84,28 @@ class BooksApp extends React.Component {
             })
     };
 
+    /**
+     * Check/tick the book
+     */
+    checkBook = (checkedBook, checkedStatus) => {
+        this.setState(state => {
+            const existInCheckedBooks = state.checkedBooks.find(book => book.id === checkedBook.id);
+
+            if (!existInCheckedBooks && checkedStatus === true) {
+                return {
+                    checkedBooks: state.checkedBooks.concat([checkedBook])
+                }
+            }
+
+            if (checkedStatus === false) {
+                return {
+                    checkedBooks: state.checkedBooks.filter(book => book.id !== checkedBook.id)
+                }
+            }
+        })
+    };
+
+
     render() {
         return (
             <div className='app'>
