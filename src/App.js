@@ -113,12 +113,16 @@ class BooksApp extends React.Component {
                     <ListBooks
                         books={this.state.books}
                         onShelfChange={this.updateShelf}
+                        onBulkShelfChange={this.bulkUpdateShelf}
+                        onBookChecked={this.checkBook}
                     />
                 }/>
                 <Route path='/search' render={() =>
                     <SearchBooks
                         currentBooks={this.state.books}
                         onShelfChange={this.updateShelf}
+                        onBulkShelfChange={this.bulkUpdateShelf}
+                        onBookChecked={this.checkBook}
                     />
                 }/>
             </div>
