@@ -34,7 +34,7 @@ class SearchBooks extends Component {
                 this.setState({
                     searchResult: response.map(book => {
                         const bookFoundInLibrary = this.props.currentBooks.find(
-                            currentBook => currentBook.id === book.id)
+                            currentBook => currentBook.id === book.id);
 
                         if (bookFoundInLibrary) {
                             book.shelf = bookFoundInLibrary.shelf;
@@ -49,13 +49,14 @@ class SearchBooks extends Component {
     render() {
         const booksToDisplay = this.state.searchResult.map(book => (
             <li key={book.id}>
-                <Book id={book.id}
-                      title={book.title}
-                      authors={book.authors}
-                      thumbnail={book.imageLinks && book.imageLinks.thumbnail}
-                      shelf={book.shelf}
-                      onShelfChange={this.changeShelf}
-                      onBookChecked={this.checkBook}
+                <Book
+                    id={book.id}
+                    title={book.title}
+                    authors={book.authors}
+                    thumbnail={book.imageLinks && book.imageLinks.thumbnail}
+                    shelf={book.shelf}
+                    onShelfChange={this.changeShelf}
+                    onBookChecked={this.checkBook}
                 />
             </li>
         ));
