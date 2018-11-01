@@ -45,6 +45,21 @@ class SearchBooks extends Component {
             }
         })
     }
+
+    render() {
+        const booksToDisplay = this.state.searchResult.map(book => (
+            <li key={book.id}>
+                <Book id={book.id}
+                      title={book.title}
+                      authors={book.authors}
+                      thumbnail={book.imageLinks && book.imageLinks.thumbnail}
+                      shelf={book.shelf}
+                      onShelfChange={this.changeShelf}
+                      onBookChecked={this.checkBook}
+                />
+            </li>
+        ))
+    }
 }
 
 SearchBooks.propTypes = {
