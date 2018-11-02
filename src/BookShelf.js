@@ -11,7 +11,6 @@ const BookShelf = (props) => {
                 authors={book.authors}
                 thumbnail={book.imageLinks && book.imageLinks.thumbnail}
                 shelf={book.shelf}
-                rating={book.ratingsCount}
                 onShelfChange={props.onShelfChange}
                 onBookChecked={props.onBookChecked}
             />

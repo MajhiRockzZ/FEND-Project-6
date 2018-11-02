@@ -18,7 +18,7 @@ const ShelfSelect = (props) => {
 
 ShelfSelect.propTypes = {
     onChange: PropTypes.func.isRequired,
-    value: PropTypes.string()
+    value: PropTypes.string
 };
 
 export default ShelfSelect;

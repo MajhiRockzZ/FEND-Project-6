@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import BookShelf from './BookShelf';
-import ShelfSelect from '/ShelfSelect';
+import ShelfSelect from './ShelfSelect';
 import PropTypes from 'prop-types';
 
 class ListBooks extends Component {
@@ -13,7 +13,7 @@ class ListBooks extends Component {
     checkBook = (bookId, checkedStatus) => {
         const checkedBookWithInfo = this.props.books.find(book => book.id === bookId);
         this.props.onBookChecked(checkedBookWithInfo, checkedStatus);
-    }
+    };
 
     render() {
         const bookShelves = this.props.books.reduce((prev, current) => {
@@ -27,6 +27,41 @@ class ListBooks extends Component {
             wantToRead: [],
             read: []
         });
+
+        return (
+            <div className='list-books'>
+                <div className='list-books-title'>
+                    <h1>MyReads</h1>
+                    <div className='bulk-shelf-changer'>
+                        <ShelfSelect onChange={this.bulkShelfChange}/>
+                    </div>
+                </div>
+                <div className='list-books-content'>
+                    <div>
+                        <BookShelf
+                            title='Currently Reading'
+                            books={bookShelves.currentlyReading}
+                            onShelfChange={this.props.onShelfChange}
+                        />
+                        <BookShelf
+                            title='Want to Read'
+                            books={bookShelves.wantToRead}
+                            onShelfChange={this.props.onShelfChange}
+                            onBookChecked={this.checkBook}
+                        />
+                        <BookShelf
+                            title='Read'
+                            books={bookShelves.read}
+                            onShelfChange={this.props.onShelfChange}
+                            onBookChecked={this.checkBook}
+                        />
+                    </div>
+                </div>
+                <div className='open-search'>
+                    <Link to='/search'>Add a book</Link>
+                </div>
+            </div>
+        )
     }
 }
 
