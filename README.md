@@ -1,8 +1,10 @@
+<img src="src/icons/icon.png" align="right" />
+
 # MyReads: A Book Lending App
 
 MyReads project, is a bookshelf app that allows you to select and categorize books you have read, are currently reading, or want to read. The project is using React to build the application and using an API server and client library to persist information as you interact with the application.
 
-## Installation
+## ⚡️ Installation
 
 Use the package manager [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/en/) to install MyReads.
 
@@ -11,7 +13,7 @@ $ npm install
 $ yarn start or npm start
 ```
 
-## Usage
+## 🎯 Usage
 
 - In this application, the main page displays a list of "shelves" (i.e. categories), each of which contains a number of books. The three shelves are:
 
@@ -29,18 +31,18 @@ $ yarn start or npm start
 
 When you navigate back to the main page from the search page, you should instantly see all of the selections you made on the search page in your library.
 
-## Contributing
+## 🛠 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-## License
+## 🔑 License
 [MIT](https://github.com/MajhiRockzZ/FEND-Project-6/blob/master/LICENSE)
 
-## Credits
+## 🏆 Credits
 
 [Sumesh Majhi](https://github.com/MajhiRockzZ)
 
-## Acknowledgments
+## 💐 Acknowledgments
 
 Special thanks to Udacity Team.
