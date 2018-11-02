@@ -42,6 +42,7 @@ class ListBooks extends Component {
               title='Currently Reading'
               books={bookShelves.currentlyReading}
               onShelfChange={this.props.onShelfChange}
+              onBookChecked={this.checkBook}
             />
             <BookShelf
               title='Want to Read'
