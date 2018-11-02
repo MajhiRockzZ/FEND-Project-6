@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const ShelfSelect = (props) => {
-  const {value = ''} = props;
+  const {value = 'none'} = props;
   return (
     <div className='book-shelf-changer'>
       <select onChange={props.onChange} value={value}>
