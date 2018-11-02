@@ -78,7 +78,7 @@ class BooksApp extends React.Component {
           });
 
           return {
-            book: currentBookWithUpdatedShelf.concat(newBooksWithUpdatedShelf),
+            books: currentBookWithUpdatedShelf.concat(newBooksWithUpdatedShelf),
             checkedBooks: [],
           }
         })
