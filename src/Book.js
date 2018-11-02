@@ -42,7 +42,7 @@ Book.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   thumbnail: PropTypes.string,
-  authors: PropTypes.array.isRequired,
+  authors: PropTypes.array,
   onShelfChange: PropTypes.func.isRequired,
   onBookChecked: PropTypes.func
 };
