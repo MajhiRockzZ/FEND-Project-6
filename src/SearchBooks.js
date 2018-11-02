@@ -30,7 +30,10 @@ class SearchBooks extends Component {
 
   search = (query) => {
     BookAPI.search(query, 10).then(response => {
-      if (!response.error) {
+      if (query.length === 0) {
+        this.setState({ searchResult: [] })
+      }
+      else if (!response.error) {
         this.setState({
           searchResult: response.map(book => {
             const bookFoundInLibrary = this.props.currentBooks.find(
