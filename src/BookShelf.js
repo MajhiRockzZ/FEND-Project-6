@@ -1,6 +1,6 @@
-import React from 'react';
-import Book from './Book';
-import PropTypes from 'prop-types';
+import React from 'react'
+import Book from './Book'
+import PropTypes from 'prop-types'
 
 const BookShelf = (props) => {
   const booksToDisplay = props.books.map((book) => (
