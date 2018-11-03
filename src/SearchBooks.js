@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 
 class SearchBooks extends Component {
   state = {
+    query : '',
     searchResult: []
   };
 
