@@ -31,7 +31,7 @@ class SearchBooks extends Component {
 
   search = (query) => {
     BookAPI.search(query).then(response => {
-      if (query.length === 0) {
+      if (query.length === 0 || query === "") {
         this.setState({ searchResult: [] })
       }
       else if (!response.error) {
@@ -42,10 +42,16 @@ class SearchBooks extends Component {
 
             if (bookFoundInLibrary) {
               book.shelf = bookFoundInLibrary.shelf;
+            } else {
+              this.shelf = "";
+              this.bookFoundInLibrary = "";
+              this.setState({ query: ''})
             }
             return book;
           })
         })
+      } else {
+        this.setState({ searchResult: []})
       }
     })
   };
