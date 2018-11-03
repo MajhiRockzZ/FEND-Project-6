@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import * as BookAPI from './BooksAPI'
 import {Link} from 'react-router-dom'
-import Book from './Book';
-import ShelfSelect from './ShelfSelect';
+import Book from './Book'
+import ShelfSelect from './ShelfSelect'
 import PropTypes from 'prop-types'
 
 class SearchBooks extends Component {
@@ -30,7 +30,7 @@ class SearchBooks extends Component {
   };
 
   search = (query) => {
-    BookAPI.search(query, 10).then(response => {
+    BookAPI.search(query).then(response => {
       if (query.length === 0) {
         this.setState({ searchResult: [] })
       }
